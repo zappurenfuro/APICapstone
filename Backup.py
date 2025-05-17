@@ -482,29 +482,47 @@ class ResumeScanner:
         logging.info(f"Loading embeddings from {file_path}...")
         
         try:
-            # Use memory mapping for large files
-            if os.path.getsize(file_path) > 1e9:  # If file is larger than 1GB
-                embeddings_cpu = np.load(file_path, mmap_mode='r', allow_pickle=True)
-                logging.info(f"Using memory mapping for large embeddings file")
-                
-                # For operations, we'll load chunks into GPU as needed
-                self.embeddings_file = file_path
-                self.embeddings_shape = embeddings_cpu.shape
-                
-                # Load a small batch into GPU for immediate use
-                batch_size = min(1000, embeddings_cpu.shape[0])
-                self.embeddings = torch.tensor(embeddings_cpu[:batch_size]).to(self.device)
-            else:
-                # For smaller files, load everything into memory
-                embeddings_cpu = np.load(file_path, allow_pickle=True)
-                self.embeddings = torch.tensor(embeddings_cpu).to(self.device)
+            # Always use allow_pickle=True when loading
+            embeddings_cpu = np.load(file_path, allow_pickle=True)
             
+            # Convert to tensor
+            self.embeddings = torch.tensor(embeddings_cpu).to(self.device)
             logging.info(f"Loaded embeddings with shape {embeddings_cpu.shape}")
             return self.embeddings
             
         except Exception as e:
             logging.error(f"Error loading embeddings: {str(e)}")
             logging.error(traceback.format_exc())
+            
+            # Try to save a new version of the file
+            try:
+                logging.info("Attempting to fix the embeddings file format...")
+                # Try to load with a different approach
+                with open(file_path, 'rb') as f:
+                    # Skip the header
+                    f.seek(128)  # Skip potential header
+                    # Try to load the raw data
+                    raw_data = np.fromfile(f, dtype=np.float32)
+                    
+                    if len(raw_data) > 0:
+                        # Reshape based on expected dimensions
+                        # Assuming 1024-dimensional embeddings
+                        num_embeddings = len(raw_data) // 1024
+                        reshaped_data = raw_data[:num_embeddings * 1024].reshape(num_embeddings, 1024)
+                        
+                        # Save in a new format
+                        new_file_path = os.path.join(self.output_folder, 'resume_embeddings_fixed.npy')
+                        np.save(new_file_path, reshaped_data)
+                        logging.info(f"Saved fixed embeddings to {new_file_path}")
+                        
+                        # Try to load the new file
+                        embeddings_cpu = np.load(new_file_path, allow_pickle=True)
+                        self.embeddings = torch.tensor(embeddings_cpu).to(self.device)
+                        logging.info(f"Loaded fixed embeddings with shape {embeddings_cpu.shape}")
+                        return self.embeddings
+            except Exception as e2:
+                logging.error(f"Error fixing embeddings: {str(e2)}")
+            
             logging.warning("Creating new embeddings...")
             return self.create_embeddings()
     
