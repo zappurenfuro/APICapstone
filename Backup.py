@@ -472,6 +472,7 @@ class ResumeScanner:
     
     def load_embeddings(self, file_path=None):
         """Load pre-computed embeddings from file."""
+        file_path = "/output/resume_embeddings.npy"
         if file_path is None:
             file_path = os.path.join(self.output_folder, 'resume_embeddings.npy')
         
