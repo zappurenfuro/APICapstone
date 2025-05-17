@@ -1,0 +1,16 @@
+colorama==0.4.6
+docx2txt==0.9
+fastapi==0.115.12
+numpy==1.25.2
+pandas==2.2.3
+psutil==5.9.8
+pydantic==2.11.4
+PyPDF2==3.0.1
+scikit_learn==1.6.1
+sentence_transformers==4.1.0
+setuptools==65.5.0
+textract==1.6.5
+torch==2.7.0
+tqdm==4.65.0
+umap==0.1.1
+uvicorn==0.34.2

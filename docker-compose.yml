@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  resume-scanner:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./model_artifacts:/app/model_artifacts
+    environment:
+      - MODEL_PATH=/app/model_artifacts
+      - OUTPUT_DIR=/app/output
+      - INPUT_DIR=/app/input

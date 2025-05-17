@@ -1,0 +1,468 @@
+2025-05-17 12:51:34,594 - INFO - Created RAM-based temporary directory at C:\Users\USER\AppData\Local\Temp\tmp_qady1yg
+2025-05-17 12:51:34,594 - INFO - Using device: cuda
+2025-05-17 12:51:34,600 - INFO - System resources:
+2025-05-17 12:51:34,600 - INFO -   CPU: 16 cores
+2025-05-17 12:51:34,602 - INFO -   RAM: 31.84 GB total, 16.35 GB available
+2025-05-17 12:51:34,602 - INFO -   GPU: NVIDIA GeForce RTX 4060 with 8.00 GB memory
+2025-05-17 12:51:34,603 - INFO - Mixed precision is available and will be used
+2025-05-17 12:51:34,603 - INFO - CUDA optimizations enabled
+2025-05-17 12:51:34,604 - INFO - Loading embedding model (BAAI/bge-large-en-v1.5)...
+2025-05-17 12:51:34,605 - INFO - Use pytorch device_name: cuda:0
+2025-05-17 12:51:34,606 - INFO - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-05-17 12:51:39,435 - INFO - Loading datasets with memory optimization...
+2025-05-17 12:51:39,439 - INFO - Using chunk size of 100000 based on 16.48 GB available RAM
+2025-05-17 12:51:39,441 - INFO - Loading CSV files in chunks...
+2025-05-17 12:51:42,679 - INFO - Cleaning text in all dataframes...
+2025-05-17 12:51:49,181 - INFO - Filtering and cleaning data...
+2025-05-17 12:51:49,295 - INFO - Processing title column to keep only the first title...
+2025-05-17 12:51:49,391 - INFO - Aggregating text by person...
+2025-05-17 12:52:00,456 - INFO - Merging dataframes...
+2025-05-17 12:52:00,986 - INFO - Removing duplicate rows based on content (excluding person_id)...
+2025-05-17 12:52:01,056 - INFO - Removed 36643 duplicate content rows (66.71% of data)
+2025-05-17 12:52:01,059 - INFO - Creating text representation...
+2025-05-17 12:52:01,833 - INFO - DataFrame memory usage before optimization: 54.14 MB
+2025-05-17 12:52:01,961 - INFO - DataFrame memory usage after optimization: 54.57 MB
+2025-05-17 12:52:01,961 - INFO - Memory reduced by -0.80%
+...
+Creating embeddings:  95%|█████████▍| 559/590 [04:48<00:16,  1.87it/s]2025-05-17 12:56:51,204 - INFO - Processed 17360/18285 samples (94.9%) in 288.6s
+Creating embeddings:  98%|█████████▊| 579/590 [04:58<00:05,  1.95it/s]2025-05-17 12:57:01,709 - INFO - Processed 17980/18285 samples (98.3%) in 299.1s
+Creating embeddings: 100%|██████████| 590/590 [05:04<00:00,  1.94it/s]
+2025-05-17 12:57:06,920 - INFO - Created and saved embeddings for 18285 resumes in 304.3s
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+✅ Successfully processed CSV data and created embeddings
+2025-05-17 12:57:06,981 - INFO - Extracted text from cv_hilda.pdf (hash: 8e0775ac...)
+2025-05-17 12:57:06,982 - INFO - Text preview: Hilda Tri Fatikasari Hilal Malang, Jawa Timur, 65145 | +62 896-3680-9982 | hildatfh@student.ub.ac.id About Me Professional videographer and video editor with 7+ years of experience in creating compell...
+2025-05-17 12:57:06,983 - INFO - Extracted 1538 characters from cv_hilda.pdf
+
+================================================================================
+📄 PROCESSING RESUME: cv_hilda.pdf
+================================================================================
+2025-05-17 12:57:06,990 - INFO - Matching text against dataset (resume)...
+2025-05-17 12:57:06,991 - INFO - Matching text (hash: 8e0775ac...)
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.66it/s]
+2025-05-17 12:57:07,146 - INFO - Found 5 resume matches and saved to resume_matches_cv_hilda.csv
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.42it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 50.98it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 36.70it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 36.17it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.57it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 51.82it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 49.49it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 42.87it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 51.09it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 43.19it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 58.06it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 52.95it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 47.34it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 50.13it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.55it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 40.99it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.36it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.83it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.46it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 52.78it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.81it/s]
+...
+Batches: 100%|██████████| 1/1 [00:00<00:00, 42.09it/s]
+2025-05-17 12:57:07,863 - INFO - Found 3 domain matches with 5 jobs each
+2025-05-17 12:57:07,864 - INFO - Saved domain matches to it_domain_matches_cv_hilda.csv
+2025-05-17 12:57:07,864 - INFO - Saved job matches to it_jobs_cv_hilda.csv
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+
+================================================================================
+🌐 TOP IT DOMAIN MATCHES FOR cv_hilda.pdf
+================================================================================
+
+#1 UI/UX & Design - 52.32%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.87it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 48.39it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.05it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.68it/s]
+🔹 Senior Product Designer, Consultant, Front-end Developer - 32.71%
+   Created a brand new strategic platform; Created popular iOS/Android app; Worked on feature specs inc...
+
+🔹 Lead Ui/ux Designer - 30.49%
+   Curious and empathetic problem solver; Designing creative and strategic solutions; Brand identity; P...
+
+🔹 Lead Interaction Designer - 16.80%
+   User research; User-centered design; Project management; Wireframing; Data collection and analysis; ...
+
+
+#2 Game Development - 30.10%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 43.73it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 43.58it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.07it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.94it/s]
+🔹 Game Developer - 96.41%
+   game design; app development; self-discipline; time management; mobile development; front end develo...
+
+🔹 Game Designer - 32.16%
+   Domain: Game Development, Job: Game Designer
+
+🔹 3D Artist / Animator - 14.46%
+   Domain: Game Development, Job: 3D Artist / Animator
+
+
+#3 Project & Product Management - 26.37%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 36.57it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 36.42it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 49.55it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 52.16it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 52.07it/s]
+🔹 It Project Manager / Senior Systems Analyst - 29.49%
+   TRAINING AND DEVELOPMENT STRATEGIES; COMPUTER NETWORKING; DATABASE ADMINISTRATION; DATABASE DEVELOPM...
+
+🔹 Lead Analyst/product Owner - 29.15%
+   Automated Testing; Documentation; Debugging & Troubleshooting; Developed onboarding process; Develop...
+
+🔹 Sr. Business Analyst - 28.66%
+   Software Development lifecycle; Business analysis; Waterfall and Agile (Scrum) methodologies; Requir...
+
+🔹 Scrum Master - 12.07%
+   Scrum Master; Agile software development; Product backlog management; Metrics and status tracking; D...
+
+
+✅ Processed cv_hilda.pdf and found 5 matches
+
+📊 Matching cv_hilda.pdf against job titles in the dataset:
+2025-05-17 12:57:08,440 - INFO - Matching text against dataset (job)...
+2025-05-17 12:57:08,442 - INFO - Matching text (hash: 8e0775ac...)
+Batches: 100%|██████████| 1/1 [00:00<00:00, 43.69it/s]
+2025-05-17 12:57:08,600 - INFO - Found 5 job matches and saved to job_matches_cv_hilda.csv
+
+================================================================================
+🏆 TOP JOB MATCHES FOR cv_hilda.pdf
+================================================================================
+🔹 Multimedia Architect - 66.14%
+   Project Management; Technology Trainer; Effective Communication Skills; Keen Sense of Responsibility...
+
+🔹 Digital Marketing Manager - 65.29%
+   Video Editing; Video Production; Photoshop; Digital Marketing; Social Media Marketing; Social Media ...
+
+🔹 Freelance Designer / Front End Developer - 64.74%
+   Award-winning multimedia professional; Advertising, publishing, animation, design and illustration e...
+
+🔹 Robotics Mentor/volunteer - 63.41%
+   Video editing; Photography; Web development; Graphic design; Computer Aided Design (CAD); Public Rel...
+
+🔹 Digital Manager - 63.09%
+   Video Producer and editor; Translate promotional messages into engaging motion picture; Contract man...
+
+
+🖥️ Matching cv_hilda.pdf against IT domains and jobs:
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.15it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 26.95it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.48it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 29.64it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 43.15it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 33.67it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.55it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.76it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.46it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 32.10it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 43.28it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.57it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.04it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 35.95it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 32.26it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.67it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 32.82it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.27it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.13it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.72it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.89it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 51.99it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 40.02it/s]
+
+================================================================================
+🌐 TOP IT DOMAIN MATCHES FOR cv_hilda.pdf
+================================================================================
+
+#1 UI/UX & Design - 52.32%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 31.68it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.71it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 56.43it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 42.50it/s]
+🔹 Senior Product Designer, Consultant, Front-end Developer - 32.71%
+   Created a brand new strategic platform; Created popular iOS/Android app; Worked on feature specs inc...
+
+🔹 Lead Ui/ux Designer - 30.49%
+   Curious and empathetic problem solver; Designing creative and strategic solutions; Brand identity; P...
+
+🔹 Lead Interaction Designer - 16.80%
+   User research; User-centered design; Project management; Wireframing; Data collection and analysis; ...
+
+
+#2 Game Development - 30.10%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.88it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.11it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.13it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 50.46it/s]
+🔹 Game Developer - 96.41%
+   game design; app development; self-discipline; time management; mobile development; front end develo...
+
+🔹 Game Designer - 32.16%
+   Domain: Game Development, Job: Game Designer
+
+🔹 3D Artist / Animator - 14.46%
+   Domain: Game Development, Job: 3D Artist / Animator
+
+
+#3 Project & Product Management - 26.37%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.30it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.55it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 33.31it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 35.71it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 30.80it/s]
+🔹 It Project Manager / Senior Systems Analyst - 29.49%
+   TRAINING AND DEVELOPMENT STRATEGIES; COMPUTER NETWORKING; DATABASE ADMINISTRATION; DATABASE DEVELOPM...
+
+🔹 Lead Analyst/product Owner - 29.15%
+   Automated Testing; Documentation; Debugging & Troubleshooting; Developed onboarding process; Develop...
+
+🔹 Sr. Business Analyst - 28.66%
+   Software Development lifecycle; Business analysis; Waterfall and Agile (Scrum) methodologies; Requir...
+
+🔹 Scrum Master - 12.07%
+   Scrum Master; Agile software development; Product backlog management; Metrics and status tracking; D...
+
+2025-05-17 12:57:10,181 - INFO - Extracted text from cv_rakha.pdf (hash: 8282bdb6...)
+2025-05-17 12:57:10,181 - INFO - Text preview: Farel Rakha Dzakwan profesionalfarelrakhad@gmail.com | +6282143066677 | https://www.linkedin.com/in/farel-rakha-dzakwan EDUCATION University of Brawijaya | Informatics Engineering | GPA: 3.74/4.00 Aug...
+2025-05-17 12:57:10,182 - INFO - Extracted 4497 characters from cv_rakha.pdf
+
+================================================================================
+📄 PROCESSING RESUME: cv_rakha.pdf
+================================================================================
+2025-05-17 12:57:10,189 - INFO - Matching text against dataset (resume)...
+2025-05-17 12:57:10,191 - INFO - Matching text (hash: 8282bdb6...)
+Batches: 100%|██████████| 1/1 [00:00<00:00, 25.48it/s]
+2025-05-17 12:57:10,381 - INFO - Found 5 resume matches and saved to resume_matches_cv_rakha.csv
+Batches: 100%|██████████| 1/1 [00:00<00:00, 27.46it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 33.64it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 26.45it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.02it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.48it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.05it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.22it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 49.70it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 49.31it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.35it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 36.49it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 47.07it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.22it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.82it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 48.41it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 46.08it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 45.75it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 43.50it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.42it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.73it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 56.69it/s]
+...
+Batches: 100%|██████████| 1/1 [00:00<00:00, 47.34it/s]
+2025-05-17 12:57:11,266 - INFO - Found 3 domain matches with 5 jobs each
+2025-05-17 12:57:11,267 - INFO - Saved domain matches to it_domain_matches_cv_rakha.csv
+2025-05-17 12:57:11,268 - INFO - Saved job matches to it_jobs_cv_rakha.csv
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+
+================================================================================
+🌐 TOP IT DOMAIN MATCHES FOR cv_rakha.pdf
+================================================================================
+
+#1 Data & Artificial Intelligence - 99.65%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 26.78it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 33.08it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.77it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 46.26it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 36.11it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 38.18it/s]
+🔹 Sr. Database Administrator/data Analyst - 97.39%
+   Database Administration; Data Analysis; ETL; Performance Tuning; Backup and Recovery; Disaster Recov...
+
+🔹 Python / Machine Learning Engineer - 71.43%
+   object detection; deep neural networks; character recognition; chatbot; data cleaning; data transfor...
+
+🔹 Business Intelligence Developer - 61.98%
+   SQL Server Developer; Database Administration; Business Intelligence Developer; ETL; SSIS; SSRS; T-S...
+
+🔹 Data Scientist/analytics Consultant - 41.61%
+   SQL; R; Python; Data Visualization; Data Analysis; Machine Learning; Deep Learning; Applied Statisti...
+
+🔹 AI Researcher - 24.54%
+   Domain: Data & Artificial Intelligence, Job: AI Researcher
+
+
+#2 Software Development - 85.97%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 27.15it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.94it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 35.93it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.93it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 50.82it/s]
+🔹 Founder/ Front End/backend Developer - 56.29%
+   Customized website for mobile and desktop; Usage of react to dynamically render products for a faste...
+
+🔹 Mobile App Developer - 53.55%
+   Developing native mobile applications for Android and iOS using Facebook React Native; Proficient in...
+
+🔹 React Js, Frontend Developer - 32.35%
+   Agile; Scrum; HTML5; CSS3; JavaScript; jQuery; NodeJS; Angular 2; Angular 4/5; Material Design; RXJS...
+
+🔹 Full Stack Developer/it - 23.65%
+   Developed PDM, CRM and SCM systems using C# and SQL server; Design, develop, test, support and deplo...
+
+
+#3 Project & Product Management - 50.50%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 27.67it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 35.06it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 30.15it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.99it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 35.88it/s]
+🔹 Sr. Business Analyst - 53.84%
+   Software Development lifecycle; Business analysis; Waterfall and Agile (Scrum) methodologies; Requir...
+
+🔹 It Project Manager / Senior Systems Analyst - 27.86%
+   TRAINING AND DEVELOPMENT STRATEGIES; COMPUTER NETWORKING; DATABASE ADMINISTRATION; DATABASE DEVELOPM...
+
+🔹 Lead Analyst/product Owner - 27.21%
+   Automated Testing; Documentation; Debugging & Troubleshooting; Developed onboarding process; Develop...
+
+🔹 Scrum Master - 12.83%
+   Scrum Master; Agile software development; Product backlog management; Metrics and status tracking; D...
+
+
+✅ Processed cv_rakha.pdf and found 5 matches
+
+📊 Matching cv_rakha.pdf against job titles in the dataset:
+2025-05-17 12:57:12,080 - INFO - Matching text against dataset (job)...
+2025-05-17 12:57:12,081 - INFO - Matching text (hash: 8282bdb6...)
+Batches: 100%|██████████| 1/1 [00:00<00:00, 29.77it/s]
+2025-05-17 12:57:12,244 - INFO - Found 5 job matches and saved to job_matches_cv_rakha.csv
+
+================================================================================
+🏆 TOP JOB MATCHES FOR cv_rakha.pdf
+================================================================================
+🔹 Machine Learning Scientist - 68.19%
+   Novel material discovery and design; Future defect/behavior prediction; Categorizing/analyzing custo...
+
+🔹 Software Developer - 67.56%
+   Passionate Python developer; Deep learning and machine learning algorithms using Python; C, C++, Pyt...
+
+🔹 Graduate Student Researcher - 67.18%
+   deep learning; computer vision; multi-POV; multimodal input; pose prediction; localization; sound so...
+
+🔹 Senior Data Scientist - 66.94%
+   Data Science; NLP; Machine Learning; Competitive Analysis; Sales Enablement; Agile; GitHub; Web Scra...
+
+🔹 Teaching Assistant - 65.79%
+   Analytical problem-solving; Data cleaning; Case analysis; Machine learning; Medical reconciliation; ...
+
+
+🖥️ Matching cv_rakha.pdf against IT domains and jobs:
+Batches: 100%|██████████| 1/1 [00:00<00:00, 28.49it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 43.05it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.50it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 42.79it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.99it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 48.48it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 43.51it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 36.03it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 50.64it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.76it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.04it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.75it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 40.31it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 40.76it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.29it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 36.53it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.14it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 45.07it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 50.73it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 50.77it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.40it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 41.27it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.28it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.49it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.20it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.92it/s]
+
+================================================================================
+🌐 TOP IT DOMAIN MATCHES FOR cv_rakha.pdf
+================================================================================
+
+#1 Data & Artificial Intelligence - 99.65%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 29.70it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 35.91it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.41it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 34.61it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 45.04it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 32.33it/s]
+🔹 Sr. Database Administrator/data Analyst - 97.39%
+   Database Administration; Data Analysis; ETL; Performance Tuning; Backup and Recovery; Disaster Recov...
+
+🔹 Python / Machine Learning Engineer - 71.43%
+   object detection; deep neural networks; character recognition; chatbot; data cleaning; data transfor...
+
+🔹 Business Intelligence Developer - 61.98%
+   SQL Server Developer; Database Administration; Business Intelligence Developer; ETL; SSIS; SSRS; T-S...
+
+🔹 Data Scientist/analytics Consultant - 41.61%
+   SQL; R; Python; Data Visualization; Data Analysis; Machine Learning; Deep Learning; Applied Statisti...
+
+🔹 AI Researcher - 24.54%
+   Domain: Data & Artificial Intelligence, Job: AI Researcher
+
+
+#2 Software Development - 85.97%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 29.26it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 44.02it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.75it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 35.75it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 36.14it/s]
+🔹 Founder/ Front End/backend Developer - 56.29%
+   Customized website for mobile and desktop; Usage of react to dynamically render products for a faste...
+
+🔹 Mobile App Developer - 53.55%
+   Developing native mobile applications for Android and iOS using Facebook React Native; Proficient in...
+
+🔹 React Js, Frontend Developer - 32.35%
+   Agile; Scrum; HTML5; CSS3; JavaScript; jQuery; NodeJS; Angular 2; Angular 4/5; Material Design; RXJS...
+
+🔹 Full Stack Developer/it - 23.65%
+   Developed PDM, CRM and SCM systems using C# and SQL server; Design, develop, test, support and deplo...
+
+
+#3 Project & Product Management - 50.50%
+--------------------------------------------------
+Batches: 100%|██████████| 1/1 [00:00<00:00, 28.98it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 39.97it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 37.89it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 53.94it/s]
+Batches: 100%|██████████| 1/1 [00:00<00:00, 47.29it/s]
+🔹 Sr. Business Analyst - 53.84%
+   Software Development lifecycle; Business analysis; Waterfall and Agile (Scrum) methodologies; Requir...
+
+🔹 It Project Manager / Senior Systems Analyst - 27.86%
+   TRAINING AND DEVELOPMENT STRATEGIES; COMPUTER NETWORKING; DATABASE ADMINISTRATION; DATABASE DEVELOPM...
+
+🔹 Lead Analyst/product Owner - 27.21%
+   Automated Testing; Documentation; Debugging & Troubleshooting; Developed onboarding process; Develop...
+
+🔹 Scrum Master - 12.83%
+   Scrum Master; Agile software development; Product backlog management; Metrics and status tracking; D...
+
+
+🎉 All examples completed!
+Check the output folder (output) for results and CSV files.
+2025-05-17 12:57:13,916 - INFO - Cleaning up resources...
+2025-05-17 12:57:14,120 - INFO - Cleanup complete
