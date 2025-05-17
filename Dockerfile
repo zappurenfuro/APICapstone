@@ -11,9 +11,9 @@ RUN pip install python-multipart
 RUN mkdir -p input output model_artifacts
 
 # Copy data files specifically (before copying everything else)
-# This ensures these directories are copied even if they're in .dockerignore
 COPY input/ /app/input/
-COPY output/ /app/output/
+COPY output/valid_embeddings.npy /app/output/resume_embeddings.npy
+COPY output/processed_resumes.csv /app/output/
 
 # Copy the rest of the application
 COPY . .

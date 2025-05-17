@@ -482,42 +482,23 @@ class ResumeScanner:
         logging.info(f"Loading embeddings from {file_path}...")
         
         try:
-            # Try loading with standard NumPy approach first
-            try:
-                # Use allow_pickle=False to force NumPy to interpret as a standard array
-                embeddings_cpu = np.load(file_path, allow_pickle=False)
-                logging.info(f"Successfully loaded embeddings with allow_pickle=False")
-            except Exception as e1:
-                logging.warning(f"Failed to load with allow_pickle=False: {str(e1)}")
+            # Use memory mapping for large files
+            if os.path.getsize(file_path) > 1e9:  # If file is larger than 1GB
+                embeddings_cpu = np.load(file_path, mmap_mode='r')
+                logging.info(f"Using memory mapping for large embeddings file")
                 
-                # Try with allow_pickle=True as fallback
-                try:
-                    embeddings_cpu = np.load(file_path, allow_pickle=True)
-                    logging.info(f"Successfully loaded embeddings with allow_pickle=True")
-                except Exception as e2:
-                    logging.error(f"Failed to load with allow_pickle=True: {str(e2)}")
-                    
-                    # Try loading as raw binary data
-                    try:
-                        logging.info("Attempting to load as raw binary data...")
-                        # Get file size
-                        file_size = os.path.getsize(file_path)
-                        
-                        # Read header to determine format
-                        with open(file_path, 'rb') as f:
-                            header = f.read(16)
-                            logging.info(f"File header (hex): {header.hex()}")
-                        
-                        # Try to load with memory mapping
-                        embeddings_cpu = np.memmap(file_path, dtype=np.float32, mode='r', offset=128, 
-                                                shape=(18285, 1024))  # Use your known shape here
-                        logging.info(f"Successfully loaded embeddings with memmap")
-                    except Exception as e3:
-                        logging.error(f"Failed to load as raw binary: {str(e3)}")
-                        raise e3
+                # For operations, we'll load chunks into GPU as needed
+                self.embeddings_file = file_path
+                self.embeddings_shape = embeddings_cpu.shape
+                
+                # Load a small batch into GPU for immediate use
+                batch_size = min(1000, embeddings_cpu.shape[0])
+                self.embeddings = torch.tensor(embeddings_cpu[:batch_size]).to(self.device)
+            else:
+                # For smaller files, load everything into memory
+                embeddings_cpu = np.load(file_path)
+                self.embeddings = torch.tensor(embeddings_cpu).to(self.device)
             
-            # Convert to tensor
-            self.embeddings = torch.tensor(embeddings_cpu).to(self.device)
             logging.info(f"Loaded embeddings with shape {embeddings_cpu.shape}")
             return self.embeddings
             
