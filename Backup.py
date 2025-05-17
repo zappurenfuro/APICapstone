@@ -484,7 +484,7 @@ class ResumeScanner:
         try:
             # Use memory mapping for large files
             if os.path.getsize(file_path) > 1e9:  # If file is larger than 1GB
-                embeddings_cpu = np.load(file_path, mmap_mode='r', allow_pickle=True)
+                embeddings_cpu = np.load(file_path, mmap_mode='r')
                 logging.info(f"Using memory mapping for large embeddings file")
                 
                 # For operations, we'll load chunks into GPU as needed
@@ -496,7 +496,7 @@ class ResumeScanner:
                 self.embeddings = torch.tensor(embeddings_cpu[:batch_size]).to(self.device)
             else:
                 # For smaller files, load everything into memory
-                embeddings_cpu = np.load(file_path, allow_pickle=True)
+                embeddings_cpu = np.load(file_path)
                 self.embeddings = torch.tensor(embeddings_cpu).to(self.device)
             
             logging.info(f"Loaded embeddings with shape {embeddings_cpu.shape}")
